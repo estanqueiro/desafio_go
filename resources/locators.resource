@@ -5,8 +5,8 @@
 ${BASE_URL}=    https://github.com
 ${BROWSER}=     Chrome
 
-${username}=    paulo.estanqueiro@gmail.com
-${password}=    Paulo$1967
+${username}=    paulo.xxxx
+${password}=    xxxx
 ${user_profile}=    estanqueiro
 
 
