@@ -19,11 +19,12 @@ ${err_login}=    xpath://div[@id='js-flash-container']//div[@class='container-lg
 
 ### Dashboard ###
 ${sbr_repos_container}=  id: repos-container
-${sbr_repo_link}=        xpath://div[contains(@class,'dashboard-sidebar')]//a[@href="/%s/%s"]
+${sbr_repo_link}=        xpath://div[contains(@class,'dashboard-sidebar')]//a[@href="/%s"]
 
 ### Add Menu (Create New) ###
 ${dpd_add_menu}=     xpath://summary[@class='Header-link'][@aria-label='Create new…']
 ${opt_create_repo}=  /new
+${opt_import_repo}=  /new/import
 
 ### Profile Menu ###
 ${dpd_profile_menu}=  xpath://summary[@class='Header-link'][@aria-label='View profile and more']
@@ -41,6 +42,13 @@ ${lbl_public_repo}=     class:js-privacy-toggle-label-public
 ${lbl_private_repo}=    class:js-privacy-toggle-label-private
 ${btn_create_repo}=     xpath://button[@class='btn btn-primary first-in-line']
 
+### Import Repo Form ###
+${hdr_import_repo}=      xpath://h2[contains(text(),'Import')]
+${ipt_import_repo}=      xpath://input[@name='vcs_url']
+${btn_import_repo}=      xpath://button[contains(text(),'Begin import')]
+${msg_import_finished}=  xpath://div[contains(text(),'Importing complete!')]
+${lnk_import_repo}=      xpath://a[contains(text(),'%s')]                                         #'${repo_owner}/${imported_repo_name}')]
+
 ### Alerts ###
 ${btn_third_part}=  xpath://button[contains(@class,'flex-1')][contains(text(),'Accept')]
 
@@ -54,3 +62,17 @@ ${btn_delete_repo}=        xpath://summary[contains(@class,'btn-danger')][contai
 ${box_delete_repo}=        xpath=//details-dialog[@aria-label='Delete repository']
 ${ipt_confirm_del}=        xpath://div[contains(@class,'Box-body')]//form/p/input
 ${btn_del_repo_confirm} =  xpath://button[@type='submit']//span[contains(text(),'delete this repository')]
+
+### Branch ###
+${sel_branch}=           id:branch-select-menu
+${lbl_cur_branch}=       xpath://span[@class='css-truncate-target']
+${ipt_branch}=           id:context-commitish-filter-field
+${sel_master}=           xpath://a[@class='SelectMenu-item']//span[contains(text(),'master')]
+${btn_create_branch}=    xpath://button[contains(@class,'SelectMenu-item')]
+${lnk_branches}=         xpath://span[contains(@class,'text-gray-light')][contains(text(),'branches')]
+${ipt_search_branches}=  xpath://input[@name='query']
+${rst_search}=           css:a.branch-name
+${btn_del_branch}=       xpath://button[@title='Delete this branch']
+${msg_branch_del}=       xpath://span[contains(text(),'Deleted just now by')]
+${btn_restore_branch}=   xpath://form//button[@name='return_to'][text()='Restore']
+${msg_no_branch}=        xpath://li[contains(text(),'No branches found matching “newbranch”.')]
