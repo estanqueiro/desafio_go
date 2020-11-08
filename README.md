@@ -38,19 +38,14 @@ O comando então ficaria assim:
 
 Também é possível executar os testes por suite (os arquivos com extensão .robot) ou por tags. 
 
-Neste projeto temos 3 suítes (exemplos de comando de execução no chrome: 
- - login:
- - failed_login
- - repository
+Neste projeto temos 3 suítes (exemplos de comando de execução no chrome): login, failed_login, repository. 
 
-    robot -d results/chrome /tests/login.robot
+    robot -d results/chrome /tests/login.robot  
     robot -d results/chrome /tests/failed_login.robot  
     robot -d results/chrome /tests/repository.robot
 
 
-As tags utilizadas foram (o comando adicional é -i <tag>. Os exemplos agora são para firefox):
-- Smoke (para os smoke tests)
-- Regression (para os testes de regressão)
+As tags utilizadas foram (o comando adicional é -i <tag>. Os exemplos agora são para firefox): Smoke, Regression.
     
     robot -d results/firefox -v BROWSER:firefox -i Smoke /tests
     robot -d results/firefox -v BROWSER:firefox -i Regression /tests
