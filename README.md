@@ -24,7 +24,8 @@ Fazer um clone do repositório **desafio_go** em um diretório local:
 
 **_Execução:_**
 
-A execução deve ser feita à partir do diretório onde foi instalado o repositório através do seguinte comando:
+A execução deve ser feita à partir do diretório onde foi instalado o repositório através do seguinte comando 
+(atençao à barra. Se estiver executando em uma máquina linux deve-se usar a barra invertida "\\" antes de testes):
 
     robot -d results/chrome /tests
 
@@ -52,10 +53,12 @@ As tags utilizadas foram (o comando adicional é -i <tag>. Os exemplos agora sã
 - Regression (para os testes de regressão)
 
 
-    robot -d results/firefox -i Smoke -v BROWSER:firefox
-    robot -d results/firefox -i Regression -v BROWSER:firefox
+    robot -d results/firefox -v BROWSER:firefox -i Smoke /tests
+    robot -d results/firefox -v BROWSER:firefox -i Regression /tests
 
 
 Observação: não existem dependências entre os testes e estes recompõem o ambiente ao estado inicial. O
 que significa que os testes podem ser executados em qualquer ordem e a execução pode ser repetida sem
 necessidade de intervir no ambiente.
+
+Deixou-se, a título de exemplo, os relatórios de teste. Chrome em results/chrome e firefox em results/firefox.
