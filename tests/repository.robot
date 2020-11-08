@@ -25,32 +25,30 @@ Delete a public repository owned by yourself
     Select Delete Option
     Confirm Delete Option    ${repo_owner}    ${repo_to_delete}
     [Teardown]  Logout
-    # Fill the information to delete and verifies that the button to delete is enabled
-    # Click into the delete button
-    # Verify that the repository is deleted
 
-#Fail to create a basic public repository with unavailable name
-#    [Tags]  Smoke
-#    [Setup]  Login As User
-#    Select Create New Repository
-#    Fill Repository Information
+Import a public repository
+    [Tags]  Regression
+    [Setup]  Login As User
+    Select Import Repository    ${repo_to_import_url}
+    Fill Repository Information    ${imported_repo_name}
+    Select "Public" Repository
+    Import Repository    ${imported_repo_name}
+    [Teardown]  Delete Repository  ${imported_repo_name}
 
-#Create a private repository with all initializations
-#    [Tags]  Regression
-#    [Setup]  Login As User
-#    Select Create New Repository
-#    Fill Repository Information
-#    Select Repository Visibility
-#    Initialize Repository
-#    [Teardown]  Delete Repository
+Create a branch from master
+    [Tags]  Regression
+    [Setup]  Login As User
+    Open Repository    ${repo_to_branch}
+    Create Branch From Master    ${new_branch}
+    [Teardown]  Delete Branch And Logout  ${new_branch}
 
-#Delete a "Public" repository owned by "yourself"
-
-
-
-#Fail to delete a "Public" repository owned by "others"
-
-#Fail to delete a "Private" repository owned by "other"
+Delete branch from repository
+    [Tags]  Regression
+    [Setup]  Login As User
+    Open Repository    ${repo_to_branch}
+    Search Branch To Delete     ${old_branch}
+    Delete Branch    ${old_branch}
+    [Teardown]  Restore Branch
 
 #Add a new file to an existing repository
 #    No Operation
