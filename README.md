@@ -25,7 +25,7 @@ Fazer um clone do repositório **desafio_go** em um diretório local:
 **_Execução:_**
 
 A execução deve ser feita à partir do diretório onde foi instalado o repositório através do seguinte comando 
-(atençao à barra. Se estiver executando em uma máquina linux deve-se usar a barra invertida "\\" antes de testes):
+(atenção à barra. Se estiver executando em uma máquina linux deve-se usar a barra invertida "\\" antes de tests):
 
     robot -d results/chrome /tests
 
