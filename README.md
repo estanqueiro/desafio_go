@@ -9,7 +9,6 @@ Este projeto foi desenvolvido utilizando-se RobotFramework. Para executá-lo, é
 As seguintes libraries devem ser instaladas (através do comando pip, sendo recomendada a última versão estável):
 
     pip install robotframework
-    
     pip install robotframework-seleniumlibrary
 
 - Navegadores (_**Chrome e Firefox**_) e respectivos webdrives (atenção à lista de compatibilidades entre navegador e webdriver. 
@@ -40,30 +39,21 @@ O comando então ficaria assim:
 Também é possível executar os testes por suite (os arquivos com extensão .robot) ou por tags. 
 
 Neste projeto temos 3 suítes (exemplos de comando de execução no chrome: 
-- login:
-- failed_login
-- repository
-
-
+ - login:
+ - failed_login
+ - repository
 
     robot -d results/chrome /tests/login.robot
-    
-    robot -d results/chrome /tests/failed_login.robot
-    
+    robot -d results/chrome /tests/failed_login.robot  
     robot -d results/chrome /tests/repository.robot
 
 
 As tags utilizadas foram (o comando adicional é -i <tag>. Os exemplos agora são para firefox):
 - Smoke (para os smoke tests)
 - Regression (para os testes de regressão)
-
-
-
-    robot -d results/firefox -v BROWSER:firefox -i Smoke /tests
     
+    robot -d results/firefox -v BROWSER:firefox -i Smoke /tests
     robot -d results/firefox -v BROWSER:firefox -i Regression /tests
-
-
 
 Observação: não existem dependências entre os testes e estes recompõem o ambiente ao estado inicial. O
 que significa que os testes podem ser executados em qualquer ordem e a execução pode ser repetida sem
