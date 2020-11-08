@@ -17,9 +17,9 @@ End Test
     Close Browser
 
 Open Profile Menu
-    #Wait Until Page Contains Element    ${sbr_repos_container}
     Click Element    ${dpd_profile_menu}
     Wait Until Element Is Visible    ${opt_user_logged}
+    Capture Page Screenshot
 
 Sign Out
     Click Button    ${opt_logout}

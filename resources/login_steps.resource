@@ -20,7 +20,6 @@ Submit Credentials
 Login As User
     Navigate To Login Page
     Submit Credentials    ${valid_user}    ${valid_pass}
-    #Verify Successful Login
 
 Verify Successful Login
     Wait Until Page Contains Element    ${sbr_repos_container}

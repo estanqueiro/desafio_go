@@ -47,7 +47,7 @@ ${hdr_import_repo}=      xpath://h2[contains(text(),'Import')]
 ${ipt_import_repo}=      xpath://input[@name='vcs_url']
 ${btn_import_repo}=      xpath://button[contains(text(),'Begin import')]
 ${msg_import_finished}=  xpath://div[contains(text(),'Importing complete!')]
-${lnk_import_repo}=      xpath://a[contains(text(),'%s')]                                         #'${repo_owner}/${imported_repo_name}')]
+${lnk_import_repo}=      xpath://a[contains(text(),'%s')]
 
 ### Alerts ###
 ${btn_third_part}=  xpath://button[contains(@class,'flex-1')][contains(text(),'Accept')]
@@ -71,6 +71,7 @@ ${sel_master}=           xpath://a[@class='SelectMenu-item']//span[contains(text
 ${btn_create_branch}=    xpath://button[contains(@class,'SelectMenu-item')]
 ${lnk_branches}=         xpath://span[contains(@class,'text-gray-light')][contains(text(),'branches')]
 ${ipt_search_branches}=  xpath://input[@name='query']
+${txt_search_rst}=       xpath://span[text()='Search results']
 ${rst_search}=           css:a.branch-name
 ${btn_del_branch}=       xpath://button[@title='Delete this branch']
 ${msg_branch_del}=       xpath://span[contains(text(),'Deleted just now by')]

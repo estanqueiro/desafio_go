@@ -10,7 +10,7 @@ Suite Teardown  End Test
 
 *** Test Cases ***
 Invalid password    ${valid_user}     ${invalid_pass}
-    [Tags]  Regression
+    [Tags]  Smoke
 Invalid username    ${invalid_user}   ${valid_pass}
     [Tags]  Smoke
 Empty username      ${EMPTY}          ${valid_pass}

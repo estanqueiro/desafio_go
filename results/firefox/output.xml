@@ -1,0 +1,2662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.5 on linux)" generated="20201108 17:37:51.382" rpa="false">
+<suite id="s1" name="Tests" source="/home/estanqueiro/Projects/desafio_go/tests">
+<suite id="s1-s1" name="Failed Login" source="/home/estanqueiro/Projects/desafio_go/tests/failed_login.robot">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Start Test</arg>
+<arg>Navigate To Login Page</arg>
+</arguments>
+<kw name="Start Test" library="support">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20201108 17:37:51.553" level="INFO">Opening browser 'firefox' to base url 'https://github.com'.</msg>
+<msg timestamp="20201108 17:37:51.554" level="INFO">Firefox driver log is always forced to to: /home/estanqueiro/Projects/desafio_go/results/firefox/geckodriver-1.log</msg>
+<status status="PASS" starttime="20201108 17:37:51.553" endtime="20201108 17:37:57.415"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${txt_sign_up}</arg>
+</arguments>
+<msg timestamp="20201108 17:37:57.534" level="INFO">Current page contains text 'Sign up'.</msg>
+<status status="PASS" starttime="20201108 17:37:57.415" endtime="20201108 17:37:57.534"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Page Should Contain Button</arg>
+<arg>${btn_third_part}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<kw name="Page Should Contain Button" library="SeleniumLibrary">
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<arguments>
+<arg>${btn_third_part}</arg>
+</arguments>
+<msg timestamp="20201108 17:37:57.598" level="INFO">Current page contains button 'xpath://button[contains(@class,'flex-1')][contains(text(),'Accept')]'.</msg>
+<status status="PASS" starttime="20201108 17:37:57.535" endtime="20201108 17:37:57.598"></status>
+</kw>
+<msg timestamp="20201108 17:37:57.598" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20201108 17:37:57.535" endtime="20201108 17:37:57.598"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${status}==True</arg>
+<arg>Click Button</arg>
+<arg>${btn_third_part}</arg>
+</arguments>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_third_part}</arg>
+</arguments>
+<msg timestamp="20201108 17:37:57.599" level="INFO">Clicking button 'xpath://button[contains(@class,'flex-1')][contains(text(),'Accept')]'.</msg>
+<status status="PASS" starttime="20201108 17:37:57.599" endtime="20201108 17:37:57.897"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:37:57.598" endtime="20201108 17:37:57.898"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20201108 17:37:57.898" endtime="20201108 17:37:58.193"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:37:51.553" endtime="20201108 17:37:58.194"></status>
+</kw>
+<kw name="Navigate To Login Page" library="login_steps">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${lnk_login}</arg>
+</arguments>
+<msg timestamp="20201108 17:37:58.196" level="INFO">Clicking link '/login'.</msg>
+<status status="PASS" starttime="20201108 17:37:58.195" endtime="20201108 17:37:58.729"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${hdr_login}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:37:58.729" endtime="20201108 17:37:58.758"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:37:58.926" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:37:58.758" endtime="20201108 17:37:58.926"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:37:58.194" endtime="20201108 17:37:58.927"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:37:51.552" endtime="20201108 17:37:58.927"></status>
+</kw>
+<test id="s1-s1-t1" name="Invalid password">
+<kw name="Login With Invalid Credentials" library="login_steps">
+<arguments>
+<arg>${valid_user}</arg>
+<arg>${invalid_pass}</arg>
+</arguments>
+<kw name="Submit Credentials" library="login_steps">
+<arguments>
+<arg>${username}</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${hdr_login}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:37:58.935" endtime="20201108 17:37:58.947"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_login}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20201108 17:37:58.947" level="INFO">Typing text 'go-contact' into text field 'id:login_field'.</msg>
+<status status="PASS" starttime="20201108 17:37:58.947" endtime="20201108 17:37:58.986"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_pass}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20201108 17:37:58.987" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg timestamp="20201108 17:37:59.000" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20201108 17:37:59.034" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20201108 17:37:58.986" endtime="20201108 17:37:59.034"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_sign_in}</arg>
+</arguments>
+<msg timestamp="20201108 17:37:59.035" level="INFO">Clicking button 'Sign in'.</msg>
+<status status="PASS" starttime="20201108 17:37:59.035" endtime="20201108 17:38:00.005"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:00.179" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:00.005" endtime="20201108 17:38:00.179"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:37:58.933" endtime="20201108 17:38:00.179"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${err_login}</arg>
+</arguments>
+<assign>
+<var>${error}</var>
+</assign>
+<msg timestamp="20201108 17:38:00.234" level="INFO">${error} = Incorrect username or password.</msg>
+<status status="PASS" starttime="20201108 17:38:00.179" endtime="20201108 17:38:00.234"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${error}</arg>
+<arg>${login_error_msg}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:00.235" endtime="20201108 17:38:00.235"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:00.395" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:00.235" endtime="20201108 17:38:00.395"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:37:58.930" endtime="20201108 17:38:00.396"></status>
+</kw>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="PASS" starttime="20201108 17:37:58.928" endtime="20201108 17:38:00.397" critical="yes"></status>
+</test>
+<test id="s1-s1-t2" name="Invalid username">
+<kw name="Login With Invalid Credentials" library="login_steps">
+<arguments>
+<arg>${invalid_user}</arg>
+<arg>${valid_pass}</arg>
+</arguments>
+<kw name="Submit Credentials" library="login_steps">
+<arguments>
+<arg>${username}</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${hdr_login}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:00.401" endtime="20201108 17:38:00.427"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_login}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:00.428" level="INFO">Typing text 'invalid_user' into text field 'id:login_field'.</msg>
+<status status="PASS" starttime="20201108 17:38:00.428" endtime="20201108 17:38:00.489"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_pass}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:00.490" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg timestamp="20201108 17:38:00.498" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20201108 17:38:00.525" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20201108 17:38:00.490" endtime="20201108 17:38:00.525"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_sign_in}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:00.526" level="INFO">Clicking button 'Sign in'.</msg>
+<status status="PASS" starttime="20201108 17:38:00.525" endtime="20201108 17:38:01.135"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:01.316" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:01.135" endtime="20201108 17:38:01.317"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:00.400" endtime="20201108 17:38:01.317"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${err_login}</arg>
+</arguments>
+<assign>
+<var>${error}</var>
+</assign>
+<msg timestamp="20201108 17:38:01.347" level="INFO">${error} = Incorrect username or password.</msg>
+<status status="PASS" starttime="20201108 17:38:01.318" endtime="20201108 17:38:01.347"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${error}</arg>
+<arg>${login_error_msg}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:01.347" endtime="20201108 17:38:01.347"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:01.493" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:01.347" endtime="20201108 17:38:01.493"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:00.400" endtime="20201108 17:38:01.493"></status>
+</kw>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="PASS" starttime="20201108 17:38:00.398" endtime="20201108 17:38:01.494" critical="yes"></status>
+</test>
+<test id="s1-s1-t3" name="Empty username">
+<kw name="Login With Invalid Credentials" library="login_steps">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${valid_pass}</arg>
+</arguments>
+<kw name="Submit Credentials" library="login_steps">
+<arguments>
+<arg>${username}</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${hdr_login}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:01.499" endtime="20201108 17:38:01.518"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_login}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:01.519" level="INFO">Typing text '' into text field 'id:login_field'.</msg>
+<status status="PASS" starttime="20201108 17:38:01.519" endtime="20201108 17:38:01.555"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_pass}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:01.557" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg timestamp="20201108 17:38:01.573" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20201108 17:38:01.599" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20201108 17:38:01.556" endtime="20201108 17:38:01.600"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_sign_in}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:01.600" level="INFO">Clicking button 'Sign in'.</msg>
+<status status="PASS" starttime="20201108 17:38:01.600" endtime="20201108 17:38:02.054"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:02.236" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:02.054" endtime="20201108 17:38:02.237"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:01.498" endtime="20201108 17:38:02.237"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${err_login}</arg>
+</arguments>
+<assign>
+<var>${error}</var>
+</assign>
+<msg timestamp="20201108 17:38:02.263" level="INFO">${error} = Incorrect username or password.</msg>
+<status status="PASS" starttime="20201108 17:38:02.238" endtime="20201108 17:38:02.263"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${error}</arg>
+<arg>${login_error_msg}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:02.263" endtime="20201108 17:38:02.264"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:02.410" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:02.264" endtime="20201108 17:38:02.410"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:01.497" endtime="20201108 17:38:02.411"></status>
+</kw>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="PASS" starttime="20201108 17:38:01.495" endtime="20201108 17:38:02.411" critical="yes"></status>
+</test>
+<test id="s1-s1-t4" name="Empty password">
+<kw name="Login With Invalid Credentials" library="login_steps">
+<arguments>
+<arg>${valid_user}</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<kw name="Submit Credentials" library="login_steps">
+<arguments>
+<arg>${username}</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${hdr_login}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:02.413" endtime="20201108 17:38:02.433"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_login}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:02.434" level="INFO">Typing text 'go-contact' into text field 'id:login_field'.</msg>
+<status status="PASS" starttime="20201108 17:38:02.434" endtime="20201108 17:38:02.475"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_pass}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:02.475" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg timestamp="20201108 17:38:02.489" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20201108 17:38:02.502" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20201108 17:38:02.475" endtime="20201108 17:38:02.502"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_sign_in}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:02.503" level="INFO">Clicking button 'Sign in'.</msg>
+<status status="PASS" starttime="20201108 17:38:02.502" endtime="20201108 17:38:02.936"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:03.136" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:02.936" endtime="20201108 17:38:03.137"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:02.412" endtime="20201108 17:38:03.137"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${err_login}</arg>
+</arguments>
+<assign>
+<var>${error}</var>
+</assign>
+<msg timestamp="20201108 17:38:03.192" level="INFO">${error} = Incorrect username or password.</msg>
+<status status="PASS" starttime="20201108 17:38:03.138" endtime="20201108 17:38:03.192"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${error}</arg>
+<arg>${login_error_msg}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:03.192" endtime="20201108 17:38:03.192"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:03.348" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:03.193" endtime="20201108 17:38:03.348"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:02.412" endtime="20201108 17:38:03.348"></status>
+</kw>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="PASS" starttime="20201108 17:38:02.411" endtime="20201108 17:38:03.350" critical="yes"></status>
+</test>
+<kw name="End Test" library="support" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201108 17:38:03.353" endtime="20201108 17:38:04.083"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:03.353" endtime="20201108 17:38:04.083"></status>
+</kw>
+<doc>This file contains the test cases for failed login in a data-driven format</doc>
+<status status="PASS" starttime="20201108 17:37:51.406" endtime="20201108 17:38:04.083"></status>
+</suite>
+<suite id="s1-s2" name="Login" source="/home/estanqueiro/Projects/desafio_go/tests/login.robot">
+<kw name="Start Test" library="support" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:04.099" level="INFO">Opening browser 'firefox' to base url 'https://github.com'.</msg>
+<msg timestamp="20201108 17:38:04.099" level="INFO">Firefox driver log is always forced to to: /home/estanqueiro/Projects/desafio_go/results/firefox/geckodriver-2.log</msg>
+<status status="PASS" starttime="20201108 17:38:04.099" endtime="20201108 17:38:09.885"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${txt_sign_up}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:10.032" level="INFO">Current page contains text 'Sign up'.</msg>
+<status status="PASS" starttime="20201108 17:38:09.885" endtime="20201108 17:38:10.032"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Page Should Contain Button</arg>
+<arg>${btn_third_part}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<kw name="Page Should Contain Button" library="SeleniumLibrary">
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<arguments>
+<arg>${btn_third_part}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:10.210" level="INFO">Current page contains button 'xpath://button[contains(@class,'flex-1')][contains(text(),'Accept')]'.</msg>
+<status status="PASS" starttime="20201108 17:38:10.032" endtime="20201108 17:38:10.211"></status>
+</kw>
+<msg timestamp="20201108 17:38:10.211" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20201108 17:38:10.032" endtime="20201108 17:38:10.211"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${status}==True</arg>
+<arg>Click Button</arg>
+<arg>${btn_third_part}</arg>
+</arguments>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_third_part}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:10.213" level="INFO">Clicking button 'xpath://button[contains(@class,'flex-1')][contains(text(),'Accept')]'.</msg>
+<status status="PASS" starttime="20201108 17:38:10.212" endtime="20201108 17:38:10.512"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:10.211" endtime="20201108 17:38:10.512"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20201108 17:38:10.512" endtime="20201108 17:38:10.804"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:04.098" endtime="20201108 17:38:10.804"></status>
+</kw>
+<test id="s1-s2-t1" name="Successful login">
+<kw name="Navigate To Login Page" library="login_steps">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${lnk_login}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:10.807" level="INFO">Clicking link '/login'.</msg>
+<status status="PASS" starttime="20201108 17:38:10.806" endtime="20201108 17:38:11.366"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${hdr_login}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:11.366" endtime="20201108 17:38:11.398"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:11.542" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:11.398" endtime="20201108 17:38:11.542"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:10.806" endtime="20201108 17:38:11.543"></status>
+</kw>
+<kw name="Submit Credentials" library="login_steps">
+<arguments>
+<arg>${valid_user}</arg>
+<arg>${valid_pass}</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${hdr_login}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:11.545" endtime="20201108 17:38:11.554"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_login}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:11.554" level="INFO">Typing text 'go-contact' into text field 'id:login_field'.</msg>
+<status status="PASS" starttime="20201108 17:38:11.554" endtime="20201108 17:38:11.600"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_pass}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:11.600" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg timestamp="20201108 17:38:11.612" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20201108 17:38:11.635" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20201108 17:38:11.600" endtime="20201108 17:38:11.636"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_sign_in}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:11.636" level="INFO">Clicking button 'Sign in'.</msg>
+<status status="PASS" starttime="20201108 17:38:11.636" endtime="20201108 17:38:12.986"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:13.194" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:12.986" endtime="20201108 17:38:13.194"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:11.544" endtime="20201108 17:38:13.195"></status>
+</kw>
+<kw name="Verify Successful Login" library="login_steps">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${sbr_repos_container}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:13.196" endtime="20201108 17:38:13.205"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${dpd_profile_menu}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:13.206" level="INFO">Clicking element 'xpath://summary[@class='Header-link'][@aria-label='View profile and more']'.</msg>
+<status status="PASS" starttime="20201108 17:38:13.205" endtime="20201108 17:38:13.464"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${opt_user_logged}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:13.465" endtime="20201108 17:38:13.474"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${opt_user_logged}</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20201108 17:38:13.508" level="INFO">${user} = go-contact</msg>
+<status status="PASS" starttime="20201108 17:38:13.475" endtime="20201108 17:38:13.508"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${user}</arg>
+<arg>${user_profile}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:13.508" endtime="20201108 17:38:13.509"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:13.672" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:13.509" endtime="20201108 17:38:13.672"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:13.195" endtime="20201108 17:38:13.673"></status>
+</kw>
+<kw name="Sign Out" library="support" type="teardown">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${opt_logout}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:13.676" level="INFO">Clicking button 'Sign out'.</msg>
+<status status="PASS" starttime="20201108 17:38:13.674" endtime="20201108 17:38:14.537"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${txt_sign_up}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:14.537" endtime="20201108 17:38:14.679"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:14.921" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:14.679" endtime="20201108 17:38:14.921"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:13.673" endtime="20201108 17:38:14.921"></status>
+</kw>
+<doc>This test case submits valid credentials and i validates the user logged in</doc>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="PASS" starttime="20201108 17:38:10.805" endtime="20201108 17:38:14.922" critical="yes"></status>
+</test>
+<kw name="End Test" library="support" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201108 17:38:14.925" endtime="20201108 17:38:15.727"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:14.924" endtime="20201108 17:38:15.728"></status>
+</kw>
+<doc>This file contains the test cases related to login</doc>
+<status status="PASS" starttime="20201108 17:38:04.091" endtime="20201108 17:38:15.728"></status>
+</suite>
+<suite id="s1-s3" name="Repository" source="/home/estanqueiro/Projects/desafio_go/tests/repository.robot">
+<kw name="Start Test" library="support" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:15.753" level="INFO">Opening browser 'firefox' to base url 'https://github.com'.</msg>
+<msg timestamp="20201108 17:38:15.753" level="INFO">Firefox driver log is always forced to to: /home/estanqueiro/Projects/desafio_go/results/firefox/geckodriver-3.log</msg>
+<status status="PASS" starttime="20201108 17:38:15.752" endtime="20201108 17:38:21.468"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${txt_sign_up}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:21.647" level="INFO">Current page contains text 'Sign up'.</msg>
+<status status="PASS" starttime="20201108 17:38:21.469" endtime="20201108 17:38:21.647"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Page Should Contain Button</arg>
+<arg>${btn_third_part}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<kw name="Page Should Contain Button" library="SeleniumLibrary">
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<arguments>
+<arg>${btn_third_part}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:21.760" level="INFO">Current page contains button 'xpath://button[contains(@class,'flex-1')][contains(text(),'Accept')]'.</msg>
+<status status="PASS" starttime="20201108 17:38:21.648" endtime="20201108 17:38:21.760"></status>
+</kw>
+<msg timestamp="20201108 17:38:21.760" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20201108 17:38:21.648" endtime="20201108 17:38:21.760"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${status}==True</arg>
+<arg>Click Button</arg>
+<arg>${btn_third_part}</arg>
+</arguments>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_third_part}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:21.762" level="INFO">Clicking button 'xpath://button[contains(@class,'flex-1')][contains(text(),'Accept')]'.</msg>
+<status status="PASS" starttime="20201108 17:38:21.761" endtime="20201108 17:38:22.055"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:21.761" endtime="20201108 17:38:22.055"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20201108 17:38:22.055" endtime="20201108 17:38:22.343"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:15.752" endtime="20201108 17:38:22.344"></status>
+</kw>
+<test id="s1-s3-t1" name="Create a basic private repository">
+<kw name="Login As User" library="login_steps" type="setup">
+<kw name="Navigate To Login Page" library="login_steps">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${lnk_login}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:22.349" level="INFO">Clicking link '/login'.</msg>
+<status status="PASS" starttime="20201108 17:38:22.349" endtime="20201108 17:38:22.899"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${hdr_login}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:22.899" endtime="20201108 17:38:22.913"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:23.060" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-14.png"&gt;&lt;img src="selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:22.913" endtime="20201108 17:38:23.060"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:22.348" endtime="20201108 17:38:23.060"></status>
+</kw>
+<kw name="Submit Credentials" library="login_steps">
+<arguments>
+<arg>${valid_user}</arg>
+<arg>${valid_pass}</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${hdr_login}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:23.062" endtime="20201108 17:38:23.081"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_login}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:23.082" level="INFO">Typing text 'go-contact' into text field 'id:login_field'.</msg>
+<status status="PASS" starttime="20201108 17:38:23.081" endtime="20201108 17:38:23.126"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_pass}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:23.128" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg timestamp="20201108 17:38:23.142" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20201108 17:38:23.172" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20201108 17:38:23.127" endtime="20201108 17:38:23.172"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_sign_in}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:23.172" level="INFO">Clicking button 'Sign in'.</msg>
+<status status="PASS" starttime="20201108 17:38:23.172" endtime="20201108 17:38:24.568"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:24.750" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:24.568" endtime="20201108 17:38:24.750"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:23.061" endtime="20201108 17:38:24.750"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:22.347" endtime="20201108 17:38:24.750"></status>
+</kw>
+<kw name="Select Create New Repository" library="repository_steps">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${dpd_add_menu}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:24.751" endtime="20201108 17:38:24.774"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${dpd_add_menu}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:24.775" level="INFO">Clicking element 'xpath://summary[@class='Header-link'][@aria-label='Create new…']'.</msg>
+<status status="PASS" starttime="20201108 17:38:24.774" endtime="20201108 17:38:25.005"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${new_repo}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:25.005" endtime="20201108 17:38:25.028"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${opt_create_repo}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:25.028" level="INFO">Clicking link '/new'.</msg>
+<status status="PASS" starttime="20201108 17:38:25.028" endtime="20201108 17:38:25.810"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${frm_new_repo}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:25.811" endtime="20201108 17:38:25.846"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:26.037" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:25.846" endtime="20201108 17:38:26.037"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:24.750" endtime="20201108 17:38:26.037"></status>
+</kw>
+<kw name="Fill Repository Information" library="repository_steps">
+<arguments>
+<arg>${repo_name}</arg>
+<arg>${repo_desc}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ipt_repo_name}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:26.040" endtime="20201108 17:38:26.055"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_repo_name}</arg>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:26.055" level="INFO">Typing text 'gocontact' into text field 'id:repository_name'.</msg>
+<status status="PASS" starttime="20201108 17:38:26.055" endtime="20201108 17:38:26.113"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ttp_repo_available}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:26.114" endtime="20201108 17:38:26.984"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${description}'!='${EMPTY}'</arg>
+<arg>Input Text</arg>
+<arg>${ipt_repo_desc}</arg>
+<arg>${description}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_repo_desc}</arg>
+<arg>${description}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:26.987" level="INFO">Typing text 'new test repository' into text field 'id:repository_description'.</msg>
+<status status="PASS" starttime="20201108 17:38:26.986" endtime="20201108 17:38:27.047"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:26.985" endtime="20201108 17:38:27.047"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:27.211" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:27.048" endtime="20201108 17:38:27.212"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:26.037" endtime="20201108 17:38:27.212"></status>
+</kw>
+<kw name="Select &quot;Private&quot; Repository" library="repository_steps">
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${visibility}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:27.215" level="INFO">${visibility} = Private</msg>
+<status status="PASS" starttime="20201108 17:38:27.214" endtime="20201108 17:38:27.216"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${lbl_${visibility.lower()}_repo}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:27.216" endtime="20201108 17:38:27.223"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${lbl_${visibility.lower()}_repo}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:27.225" level="INFO">Clicking element 'class:js-privacy-toggle-label-private'.</msg>
+<status status="PASS" starttime="20201108 17:38:27.224" endtime="20201108 17:38:27.468"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:27.643" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-18.png"&gt;&lt;img src="selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:27.469" endtime="20201108 17:38:27.643"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:27.213" endtime="20201108 17:38:27.644"></status>
+</kw>
+<kw name="Create Repository" library="repository_steps">
+<arguments>
+<arg>${repo_name}</arg>
+<arg>${visibility}</arg>
+</arguments>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${btn_create_repo}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:27.647" endtime="20201108 17:38:27.693"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_create_repo}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:27.693" level="INFO">Clicking button 'xpath://button[@class='btn btn-primary first-in-line']'.</msg>
+<status status="PASS" starttime="20201108 17:38:27.693" endtime="20201108 17:38:30.364"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${hdr_repo_name % '${repository}'}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:30.364" endtime="20201108 17:38:30.387"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${visibility}'=='Private'</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${hdr_repo_visibility % '${visibility}'}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${hdr_repo_visibility % '${visibility}'}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:30.387" endtime="20201108 17:38:30.400"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:30.387" endtime="20201108 17:38:30.400"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:30.618" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-19.png"&gt;&lt;img src="selenium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:30.401" endtime="20201108 17:38:30.618"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:27.645" endtime="20201108 17:38:30.618"></status>
+</kw>
+<kw name="Delete Repository" library="repository_steps" type="teardown">
+<arguments>
+<arg>${repo_name}</arg>
+</arguments>
+<kw name="Select Delete Option" library="repository_steps">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${btn_settings_repo}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:30.619" endtime="20201108 17:38:30.637"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_settings_repo}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:30.638" level="INFO">Clicking element 'xpath://span[@data-content='Settings']'.</msg>
+<status status="PASS" starttime="20201108 17:38:30.637" endtime="20201108 17:38:30.904"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${btn_delete_repo}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:30.905" endtime="20201108 17:38:32.048"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>window.scrollTo(0,document.body.scrollHeight)</arg>
+</arguments>
+<msg timestamp="20201108 17:38:32.050" level="INFO">Executing JavaScript:
+window.scrollTo(0,document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20201108 17:38:32.048" endtime="20201108 17:38:32.159"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_delete_repo}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:32.159" level="INFO">Clicking element 'xpath://summary[contains(@class,'btn-danger')][contains(text(),'Delete')]'.</msg>
+<status status="PASS" starttime="20201108 17:38:32.159" endtime="20201108 17:38:32.509"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${box_delete_repo}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:32.509" endtime="20201108 17:38:32.515"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:32.653" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-20.png"&gt;&lt;img src="selenium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:32.516" endtime="20201108 17:38:32.654"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:30.619" endtime="20201108 17:38:32.654"></status>
+</kw>
+<kw name="Confirm Delete Option" library="repository_steps">
+<arguments>
+<arg>${repo_owner}</arg>
+<arg>${name}</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${owner}/${name}</arg>
+</arguments>
+<assign>
+<var>${repo}</var>
+</assign>
+<msg timestamp="20201108 17:38:32.655" level="INFO">${repo} = go-contact/gocontact</msg>
+<status status="PASS" starttime="20201108 17:38:32.655" endtime="20201108 17:38:32.655"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ipt_confirm_del}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:32.655" endtime="20201108 17:38:32.660"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_confirm_del}</arg>
+<arg>${repo}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:32.661" level="INFO">Typing text 'go-contact/gocontact' into text field 'xpath://div[contains(@class,'Box-body')]//form/p/input'.</msg>
+<status status="PASS" starttime="20201108 17:38:32.660" endtime="20201108 17:38:32.713"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${btn_del_repo_confirm}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:32.713" endtime="20201108 17:38:32.735"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_del_repo_confirm}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:32.736" level="INFO">Clicking element 'xpath://button[@type='submit']//span[contains(text(),'delete this repository')]'.</msg>
+<status status="PASS" starttime="20201108 17:38:32.735" endtime="20201108 17:38:33.925"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${sbr_repos_container}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:33.925" endtime="20201108 17:38:33.943"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:34.127" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-21.png"&gt;&lt;img src="selenium-screenshot-21.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:33.943" endtime="20201108 17:38:34.127"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:32.654" endtime="20201108 17:38:34.128"></status>
+</kw>
+<kw name="Logout" library="support">
+<kw name="Open Profile Menu" library="support">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${dpd_profile_menu}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:34.133" level="INFO">Clicking element 'xpath://summary[@class='Header-link'][@aria-label='View profile and more']'.</msg>
+<status status="PASS" starttime="20201108 17:38:34.132" endtime="20201108 17:38:34.404"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${opt_user_logged}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:34.405" endtime="20201108 17:38:34.440"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:34.614" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-22.png"&gt;&lt;img src="selenium-screenshot-22.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:34.441" endtime="20201108 17:38:34.614"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:34.129" endtime="20201108 17:38:34.615"></status>
+</kw>
+<kw name="Sign Out" library="support">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${opt_logout}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:34.617" level="INFO">Clicking button 'Sign out'.</msg>
+<status status="PASS" starttime="20201108 17:38:34.616" endtime="20201108 17:38:35.425"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${txt_sign_up}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:35.425" endtime="20201108 17:38:35.484"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:35.716" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-23.png"&gt;&lt;img src="selenium-screenshot-23.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:35.484" endtime="20201108 17:38:35.716"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:34.615" endtime="20201108 17:38:35.716"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:34.128" endtime="20201108 17:38:35.716"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:30.618" endtime="20201108 17:38:35.717"></status>
+</kw>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="PASS" starttime="20201108 17:38:22.345" endtime="20201108 17:38:35.717" critical="yes"></status>
+</test>
+<test id="s1-s3-t2" name="Delete a public repository owned by yourself">
+<kw name="Login As User" library="login_steps" type="setup">
+<kw name="Navigate To Login Page" library="login_steps">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${lnk_login}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:35.722" level="INFO">Clicking link '/login'.</msg>
+<status status="PASS" starttime="20201108 17:38:35.722" endtime="20201108 17:38:36.276"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${hdr_login}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:36.276" endtime="20201108 17:38:36.317"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:36.457" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-24.png"&gt;&lt;img src="selenium-screenshot-24.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:36.317" endtime="20201108 17:38:36.457"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:35.721" endtime="20201108 17:38:36.458"></status>
+</kw>
+<kw name="Submit Credentials" library="login_steps">
+<arguments>
+<arg>${valid_user}</arg>
+<arg>${valid_pass}</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${hdr_login}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:36.460" endtime="20201108 17:38:36.475"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_login}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:36.476" level="INFO">Typing text 'go-contact' into text field 'id:login_field'.</msg>
+<status status="PASS" starttime="20201108 17:38:36.475" endtime="20201108 17:38:36.508"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_pass}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:36.509" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg timestamp="20201108 17:38:36.523" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20201108 17:38:36.545" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20201108 17:38:36.509" endtime="20201108 17:38:36.545"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_sign_in}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:36.546" level="INFO">Clicking button 'Sign in'.</msg>
+<status status="PASS" starttime="20201108 17:38:36.546" endtime="20201108 17:38:37.807"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:38.004" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-25.png"&gt;&lt;img src="selenium-screenshot-25.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:37.808" endtime="20201108 17:38:38.004"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:36.458" endtime="20201108 17:38:38.004"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:35.720" endtime="20201108 17:38:38.004"></status>
+</kw>
+<kw name="Create Repository To Delete" library="repository_steps">
+<kw name="Select Create New Repository" library="repository_steps">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${dpd_add_menu}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:38.006" endtime="20201108 17:38:38.015"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${dpd_add_menu}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:38.017" level="INFO">Clicking element 'xpath://summary[@class='Header-link'][@aria-label='Create new…']'.</msg>
+<status status="PASS" starttime="20201108 17:38:38.015" endtime="20201108 17:38:38.295"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${new_repo}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:38.296" endtime="20201108 17:38:38.317"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${opt_create_repo}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:38.318" level="INFO">Clicking link '/new'.</msg>
+<status status="PASS" starttime="20201108 17:38:38.317" endtime="20201108 17:38:39.009"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${frm_new_repo}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:39.009" endtime="20201108 17:38:39.036"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:39.164" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-26.png"&gt;&lt;img src="selenium-screenshot-26.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:39.036" endtime="20201108 17:38:39.164"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:38.005" endtime="20201108 17:38:39.164"></status>
+</kw>
+<kw name="Fill Repository Information" library="repository_steps">
+<arguments>
+<arg>${repo_to_delete}</arg>
+<arg>${repo_desc_to_delete}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ipt_repo_name}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:39.165" endtime="20201108 17:38:39.173"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_repo_name}</arg>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:39.174" level="INFO">Typing text 'repositorytodelete' into text field 'id:repository_name'.</msg>
+<status status="PASS" starttime="20201108 17:38:39.173" endtime="20201108 17:38:39.269"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ttp_repo_available}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:39.270" endtime="20201108 17:38:40.372"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${description}'!='${EMPTY}'</arg>
+<arg>Input Text</arg>
+<arg>${ipt_repo_desc}</arg>
+<arg>${description}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_repo_desc}</arg>
+<arg>${description}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:40.374" level="INFO">Typing text 'repositorydescriptiontodelete' into text field 'id:repository_description'.</msg>
+<status status="PASS" starttime="20201108 17:38:40.374" endtime="20201108 17:38:40.435"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:40.373" endtime="20201108 17:38:40.436"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:40.599" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-27.png"&gt;&lt;img src="selenium-screenshot-27.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:40.436" endtime="20201108 17:38:40.599"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:39.164" endtime="20201108 17:38:40.600"></status>
+</kw>
+<kw name="Select &quot;Public&quot; Repository" library="repository_steps">
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${visibility}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:40.603" level="INFO">${visibility} = Public</msg>
+<status status="PASS" starttime="20201108 17:38:40.602" endtime="20201108 17:38:40.603"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${lbl_${visibility.lower()}_repo}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:40.603" endtime="20201108 17:38:40.613"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${lbl_${visibility.lower()}_repo}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:40.614" level="INFO">Clicking element 'class:js-privacy-toggle-label-public'.</msg>
+<status status="PASS" starttime="20201108 17:38:40.613" endtime="20201108 17:38:40.851"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:40.974" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-28.png"&gt;&lt;img src="selenium-screenshot-28.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:40.853" endtime="20201108 17:38:40.974"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:40.601" endtime="20201108 17:38:40.974"></status>
+</kw>
+<kw name="Create Repository" library="repository_steps">
+<arguments>
+<arg>${repo_to_delete}</arg>
+<arg>${visibility}</arg>
+</arguments>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${btn_create_repo}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:40.975" endtime="20201108 17:38:41.006"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_create_repo}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:41.007" level="INFO">Clicking button 'xpath://button[@class='btn btn-primary first-in-line']'.</msg>
+<status status="PASS" starttime="20201108 17:38:41.006" endtime="20201108 17:38:43.641"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${hdr_repo_name % '${repository}'}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:43.641" endtime="20201108 17:38:43.659"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${visibility}'=='Private'</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${hdr_repo_visibility % '${visibility}'}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:43.659" endtime="20201108 17:38:43.660"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:43.792" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-29.png"&gt;&lt;img src="selenium-screenshot-29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:43.660" endtime="20201108 17:38:43.792"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:40.975" endtime="20201108 17:38:43.792"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:43.925" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-30.png"&gt;&lt;img src="selenium-screenshot-30.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:43.792" endtime="20201108 17:38:43.925"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:38.005" endtime="20201108 17:38:43.925"></status>
+</kw>
+<kw name="Select Delete Option" library="repository_steps">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${btn_settings_repo}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:43.927" endtime="20201108 17:38:43.950"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_settings_repo}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:43.951" level="INFO">Clicking element 'xpath://span[@data-content='Settings']'.</msg>
+<status status="PASS" starttime="20201108 17:38:43.950" endtime="20201108 17:38:44.253"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${btn_delete_repo}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:44.253" endtime="20201108 17:38:45.383"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>window.scrollTo(0,document.body.scrollHeight)</arg>
+</arguments>
+<msg timestamp="20201108 17:38:45.384" level="INFO">Executing JavaScript:
+window.scrollTo(0,document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20201108 17:38:45.384" endtime="20201108 17:38:45.446"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_delete_repo}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:45.446" level="INFO">Clicking element 'xpath://summary[contains(@class,'btn-danger')][contains(text(),'Delete')]'.</msg>
+<status status="PASS" starttime="20201108 17:38:45.446" endtime="20201108 17:38:45.722"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${box_delete_repo}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:45.722" endtime="20201108 17:38:45.735"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:45.924" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-31.png"&gt;&lt;img src="selenium-screenshot-31.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:45.735" endtime="20201108 17:38:45.925"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:43.927" endtime="20201108 17:38:45.925"></status>
+</kw>
+<kw name="Confirm Delete Option" library="repository_steps">
+<arguments>
+<arg>${repo_owner}</arg>
+<arg>${repo_to_delete}</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${owner}/${name}</arg>
+</arguments>
+<assign>
+<var>${repo}</var>
+</assign>
+<msg timestamp="20201108 17:38:45.928" level="INFO">${repo} = go-contact/repositorytodelete</msg>
+<status status="PASS" starttime="20201108 17:38:45.927" endtime="20201108 17:38:45.928"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ipt_confirm_del}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:45.929" endtime="20201108 17:38:45.937"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_confirm_del}</arg>
+<arg>${repo}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:45.938" level="INFO">Typing text 'go-contact/repositorytodelete' into text field 'xpath://div[contains(@class,'Box-body')]//form/p/input'.</msg>
+<status status="PASS" starttime="20201108 17:38:45.938" endtime="20201108 17:38:46.018"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${btn_del_repo_confirm}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:46.018" endtime="20201108 17:38:46.049"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_del_repo_confirm}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:46.049" level="INFO">Clicking element 'xpath://button[@type='submit']//span[contains(text(),'delete this repository')]'.</msg>
+<status status="PASS" starttime="20201108 17:38:46.049" endtime="20201108 17:38:47.103"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${sbr_repos_container}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:47.104" endtime="20201108 17:38:47.130"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:47.304" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-32.png"&gt;&lt;img src="selenium-screenshot-32.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:47.130" endtime="20201108 17:38:47.304"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:45.926" endtime="20201108 17:38:47.305"></status>
+</kw>
+<kw name="Logout" library="support" type="teardown">
+<kw name="Open Profile Menu" library="support">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${dpd_profile_menu}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:47.312" level="INFO">Clicking element 'xpath://summary[@class='Header-link'][@aria-label='View profile and more']'.</msg>
+<status status="PASS" starttime="20201108 17:38:47.311" endtime="20201108 17:38:47.563"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${opt_user_logged}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:47.564" endtime="20201108 17:38:47.601"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:47.760" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-33.png"&gt;&lt;img src="selenium-screenshot-33.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:47.601" endtime="20201108 17:38:47.760"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:47.310" endtime="20201108 17:38:47.761"></status>
+</kw>
+<kw name="Sign Out" library="support">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${opt_logout}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:47.763" level="INFO">Clicking button 'Sign out'.</msg>
+<status status="PASS" starttime="20201108 17:38:47.762" endtime="20201108 17:38:48.597"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${txt_sign_up}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:48.598" endtime="20201108 17:38:48.698"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:48.966" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-34.png"&gt;&lt;img src="selenium-screenshot-34.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:48.699" endtime="20201108 17:38:48.966"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:47.761" endtime="20201108 17:38:48.966"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:47.306" endtime="20201108 17:38:48.967"></status>
+</kw>
+<tags>
+<tag>Regression</tag>
+</tags>
+<status status="PASS" starttime="20201108 17:38:35.719" endtime="20201108 17:38:48.967" critical="yes"></status>
+</test>
+<test id="s1-s3-t3" name="Import a public repository">
+<kw name="Login As User" library="login_steps" type="setup">
+<kw name="Navigate To Login Page" library="login_steps">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${lnk_login}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:48.970" level="INFO">Clicking link '/login'.</msg>
+<status status="PASS" starttime="20201108 17:38:48.970" endtime="20201108 17:38:49.433"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${hdr_login}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:49.434" endtime="20201108 17:38:49.482"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:49.625" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-35.png"&gt;&lt;img src="selenium-screenshot-35.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:49.482" endtime="20201108 17:38:49.626"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:48.969" endtime="20201108 17:38:49.626"></status>
+</kw>
+<kw name="Submit Credentials" library="login_steps">
+<arguments>
+<arg>${valid_user}</arg>
+<arg>${valid_pass}</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${hdr_login}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:49.628" endtime="20201108 17:38:49.641"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_login}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:49.641" level="INFO">Typing text 'go-contact' into text field 'id:login_field'.</msg>
+<status status="PASS" starttime="20201108 17:38:49.641" endtime="20201108 17:38:49.699"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_pass}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:49.700" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg timestamp="20201108 17:38:49.717" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20201108 17:38:49.736" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20201108 17:38:49.700" endtime="20201108 17:38:49.736"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_sign_in}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:49.737" level="INFO">Clicking button 'Sign in'.</msg>
+<status status="PASS" starttime="20201108 17:38:49.736" endtime="20201108 17:38:51.012"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:51.188" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-36.png"&gt;&lt;img src="selenium-screenshot-36.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:51.012" endtime="20201108 17:38:51.188"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:49.626" endtime="20201108 17:38:51.189"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:48.969" endtime="20201108 17:38:51.190"></status>
+</kw>
+<kw name="Select Import Repository" library="repository_steps">
+<arguments>
+<arg>${repo_to_import_url}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${dpd_add_menu}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:51.194" endtime="20201108 17:38:51.217"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${dpd_add_menu}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:51.218" level="INFO">Clicking element 'xpath://summary[@class='Header-link'][@aria-label='Create new…']'.</msg>
+<status status="PASS" starttime="20201108 17:38:51.217" endtime="20201108 17:38:51.499"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${import_repo}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:51.500" endtime="20201108 17:38:51.517"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${opt_import_repo}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:51.517" level="INFO">Clicking link '/new/import'.</msg>
+<status status="PASS" starttime="20201108 17:38:51.517" endtime="20201108 17:38:52.068"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${hdr_import_repo}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:52.068" endtime="20201108 17:38:52.085"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_import_repo}</arg>
+<arg>${repo}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:52.087" level="INFO">Typing text 'https://github.com/estanqueiro/mystore.git' into text field 'xpath://input[@name='vcs_url']'.</msg>
+<status status="PASS" starttime="20201108 17:38:52.087" endtime="20201108 17:38:52.179"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${btn_import_repo}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:52.179" endtime="20201108 17:38:52.188"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:52.316" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-37.png"&gt;&lt;img src="selenium-screenshot-37.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:52.189" endtime="20201108 17:38:52.316"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:51.192" endtime="20201108 17:38:52.316"></status>
+</kw>
+<kw name="Fill Repository Information" library="repository_steps">
+<arguments>
+<arg>${imported_repo_name}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ipt_repo_name}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:52.317" endtime="20201108 17:38:52.331"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_repo_name}</arg>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:52.333" level="INFO">Typing text 'gomystore' into text field 'id:repository_name'.</msg>
+<status status="PASS" starttime="20201108 17:38:52.332" endtime="20201108 17:38:52.413"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ttp_repo_available}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:52.413" endtime="20201108 17:38:53.056"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${description}'!='${EMPTY}'</arg>
+<arg>Input Text</arg>
+<arg>${ipt_repo_desc}</arg>
+<arg>${description}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:53.056" endtime="20201108 17:38:53.057"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:53.198" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-38.png"&gt;&lt;img src="selenium-screenshot-38.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:53.057" endtime="20201108 17:38:53.199"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:52.316" endtime="20201108 17:38:53.199"></status>
+</kw>
+<kw name="Select &quot;Public&quot; Repository" library="repository_steps">
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${visibility}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:53.200" level="INFO">${visibility} = Public</msg>
+<status status="PASS" starttime="20201108 17:38:53.200" endtime="20201108 17:38:53.200"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${lbl_${visibility.lower()}_repo}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:53.200" endtime="20201108 17:38:53.208"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${lbl_${visibility.lower()}_repo}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:53.208" level="INFO">Clicking element 'class:js-privacy-toggle-label-public'.</msg>
+<status status="PASS" starttime="20201108 17:38:53.208" endtime="20201108 17:38:53.455"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:38:53.582" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-39.png"&gt;&lt;img src="selenium-screenshot-39.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:38:53.456" endtime="20201108 17:38:53.582"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:53.199" endtime="20201108 17:38:53.582"></status>
+</kw>
+<kw name="Import Repository" library="repository_steps">
+<arguments>
+<arg>${imported_repo_name}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${btn_import_repo}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:53.583" endtime="20201108 17:38:53.589"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_import_repo}</arg>
+</arguments>
+<msg timestamp="20201108 17:38:53.589" level="INFO">Clicking button 'xpath://button[contains(text(),'Begin import')]'.</msg>
+<status status="PASS" starttime="20201108 17:38:53.589" endtime="20201108 17:38:56.105"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${msg_import_finished}</arg>
+<arg>timeout=20s</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:38:56.105" endtime="20201108 17:39:09.188"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${lnk_import_repo %'${repo_owner}/${imported_repo_name}'}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:09.190" level="INFO">Clicking link 'xpath://a[contains(text(),'go-contact/gomystore')]'.</msg>
+<status status="PASS" starttime="20201108 17:39:09.189" endtime="20201108 17:39:10.111"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${hdr_repo_name %'${repo}'}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:10.111" endtime="20201108 17:39:10.143"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:39:10.332" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-40.png"&gt;&lt;img src="selenium-screenshot-40.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:39:10.143" endtime="20201108 17:39:10.332"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:38:53.583" endtime="20201108 17:39:10.332"></status>
+</kw>
+<kw name="Delete Repository" library="repository_steps" type="teardown">
+<arguments>
+<arg>${imported_repo_name}</arg>
+</arguments>
+<kw name="Select Delete Option" library="repository_steps">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${btn_settings_repo}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:10.334" endtime="20201108 17:39:10.347"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_settings_repo}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:10.348" level="INFO">Clicking element 'xpath://span[@data-content='Settings']'.</msg>
+<status status="PASS" starttime="20201108 17:39:10.347" endtime="20201108 17:39:10.624"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${btn_delete_repo}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:10.624" endtime="20201108 17:39:11.784"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>window.scrollTo(0,document.body.scrollHeight)</arg>
+</arguments>
+<msg timestamp="20201108 17:39:11.785" level="INFO">Executing JavaScript:
+window.scrollTo(0,document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20201108 17:39:11.784" endtime="20201108 17:39:11.854"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_delete_repo}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:11.855" level="INFO">Clicking element 'xpath://summary[contains(@class,'btn-danger')][contains(text(),'Delete')]'.</msg>
+<status status="PASS" starttime="20201108 17:39:11.854" endtime="20201108 17:39:12.133"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${box_delete_repo}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:12.134" endtime="20201108 17:39:12.149"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:39:12.290" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-41.png"&gt;&lt;img src="selenium-screenshot-41.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:39:12.149" endtime="20201108 17:39:12.290"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:39:10.333" endtime="20201108 17:39:12.290"></status>
+</kw>
+<kw name="Confirm Delete Option" library="repository_steps">
+<arguments>
+<arg>${repo_owner}</arg>
+<arg>${name}</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${owner}/${name}</arg>
+</arguments>
+<assign>
+<var>${repo}</var>
+</assign>
+<msg timestamp="20201108 17:39:12.291" level="INFO">${repo} = go-contact/gomystore</msg>
+<status status="PASS" starttime="20201108 17:39:12.291" endtime="20201108 17:39:12.292"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ipt_confirm_del}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:12.292" endtime="20201108 17:39:12.298"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_confirm_del}</arg>
+<arg>${repo}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:12.299" level="INFO">Typing text 'go-contact/gomystore' into text field 'xpath://div[contains(@class,'Box-body')]//form/p/input'.</msg>
+<status status="PASS" starttime="20201108 17:39:12.298" endtime="20201108 17:39:12.353"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${btn_del_repo_confirm}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:12.353" endtime="20201108 17:39:12.380"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_del_repo_confirm}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:12.381" level="INFO">Clicking element 'xpath://button[@type='submit']//span[contains(text(),'delete this repository')]'.</msg>
+<status status="PASS" starttime="20201108 17:39:12.380" endtime="20201108 17:39:13.639"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${sbr_repos_container}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:13.640" endtime="20201108 17:39:13.645"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:39:13.822" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-42.png"&gt;&lt;img src="selenium-screenshot-42.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:39:13.646" endtime="20201108 17:39:13.822"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:39:12.291" endtime="20201108 17:39:13.823"></status>
+</kw>
+<kw name="Logout" library="support">
+<kw name="Open Profile Menu" library="support">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${dpd_profile_menu}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:13.825" level="INFO">Clicking element 'xpath://summary[@class='Header-link'][@aria-label='View profile and more']'.</msg>
+<status status="PASS" starttime="20201108 17:39:13.824" endtime="20201108 17:39:14.129"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${opt_user_logged}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:14.130" endtime="20201108 17:39:14.176"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:39:14.295" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-43.png"&gt;&lt;img src="selenium-screenshot-43.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:39:14.176" endtime="20201108 17:39:14.296"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:39:13.824" endtime="20201108 17:39:14.296"></status>
+</kw>
+<kw name="Sign Out" library="support">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${opt_logout}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:14.298" level="INFO">Clicking button 'Sign out'.</msg>
+<status status="PASS" starttime="20201108 17:39:14.298" endtime="20201108 17:39:15.162"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${txt_sign_up}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:15.163" endtime="20201108 17:39:15.246"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:39:15.476" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-44.png"&gt;&lt;img src="selenium-screenshot-44.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:39:15.246" endtime="20201108 17:39:15.476"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:39:14.296" endtime="20201108 17:39:15.477"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:39:13.823" endtime="20201108 17:39:15.477"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:39:10.333" endtime="20201108 17:39:15.477"></status>
+</kw>
+<tags>
+<tag>Regression</tag>
+</tags>
+<status status="PASS" starttime="20201108 17:38:48.968" endtime="20201108 17:39:15.477" critical="yes"></status>
+</test>
+<test id="s1-s3-t4" name="Create a branch from master">
+<kw name="Login As User" library="login_steps" type="setup">
+<kw name="Navigate To Login Page" library="login_steps">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${lnk_login}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:15.481" level="INFO">Clicking link '/login'.</msg>
+<status status="PASS" starttime="20201108 17:39:15.481" endtime="20201108 17:39:15.954"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${hdr_login}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:15.955" endtime="20201108 17:39:15.995"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:39:16.140" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-45.png"&gt;&lt;img src="selenium-screenshot-45.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:39:15.995" endtime="20201108 17:39:16.140"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:39:15.480" endtime="20201108 17:39:16.141"></status>
+</kw>
+<kw name="Submit Credentials" library="login_steps">
+<arguments>
+<arg>${valid_user}</arg>
+<arg>${valid_pass}</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${hdr_login}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:16.143" endtime="20201108 17:39:16.157"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_login}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:16.159" level="INFO">Typing text 'go-contact' into text field 'id:login_field'.</msg>
+<status status="PASS" starttime="20201108 17:39:16.158" endtime="20201108 17:39:16.199"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_pass}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:16.200" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg timestamp="20201108 17:39:16.213" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20201108 17:39:16.240" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20201108 17:39:16.199" endtime="20201108 17:39:16.240"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_sign_in}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:16.240" level="INFO">Clicking button 'Sign in'.</msg>
+<status status="PASS" starttime="20201108 17:39:16.240" endtime="20201108 17:39:17.324"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:39:17.524" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-46.png"&gt;&lt;img src="selenium-screenshot-46.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:39:17.324" endtime="20201108 17:39:17.525"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:39:16.141" endtime="20201108 17:39:17.525"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:39:15.479" endtime="20201108 17:39:17.526"></status>
+</kw>
+<kw name="Open Repository" library="repository_steps">
+<arguments>
+<arg>${repo_to_branch}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${sbr_repos_container}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:17.528" endtime="20201108 17:39:17.579"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${sbr_repo_link %'${repo_owner}/${repo}'}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:17.580" level="INFO">Clicking link 'xpath://div[contains(@class,'dashboard-sidebar')]//a[@href="/go-contact/repotobranch"]'.</msg>
+<status status="PASS" starttime="20201108 17:39:17.580" endtime="20201108 17:39:18.567"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${hdr_repo_name %'${repo}'}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:18.567" endtime="20201108 17:39:18.626"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:39:18.788" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-47.png"&gt;&lt;img src="selenium-screenshot-47.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:39:18.627" endtime="20201108 17:39:18.788"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:39:17.527" endtime="20201108 17:39:18.789"></status>
+</kw>
+<kw name="Create Branch From Master" library="repository_steps">
+<arguments>
+<arg>${new_branch}</arg>
+</arguments>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${lbl_cur_branch}</arg>
+</arguments>
+<assign>
+<var>${cur_branch}</var>
+</assign>
+<msg timestamp="20201108 17:39:18.842" level="INFO">${cur_branch} = master</msg>
+<status status="PASS" starttime="20201108 17:39:18.789" endtime="20201108 17:39:18.842"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${cur_branch}'!='master'</arg>
+<arg>Click Element</arg>
+<arg>${lbl_cur_branch}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:18.843" endtime="20201108 17:39:18.848"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${cur_branch}'!='master'</arg>
+<arg>Click Element</arg>
+<arg>${sel_master}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:18.848" endtime="20201108 17:39:18.849"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${sel_branch}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:18.849" endtime="20201108 17:39:18.860"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${sel_branch}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:18.860" level="INFO">Clicking element 'id:branch-select-menu'.</msg>
+<status status="PASS" starttime="20201108 17:39:18.860" endtime="20201108 17:39:19.141"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ipt_branch}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:19.142" endtime="20201108 17:39:19.364"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_branch}</arg>
+<arg>${branch}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:19.365" level="INFO">Typing text 'newbranch' into text field 'id:context-commitish-filter-field'.</msg>
+<status status="PASS" starttime="20201108 17:39:19.365" endtime="20201108 17:39:19.406"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${btn_create_branch}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:19.406" endtime="20201108 17:39:19.913"></status>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>${ipt_branch}</arg>
+<arg>RETURN</arg>
+</arguments>
+<msg timestamp="20201108 17:39:19.915" level="INFO">Sending key(s) ('RETURN',) to id:context-commitish-filter-field element.</msg>
+<msg timestamp="20201108 17:39:20.222" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20201108 17:39:20.222" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20201108 17:39:19.914" endtime="20201108 17:39:20.256"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Branch created.</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:20.256" endtime="20201108 17:39:21.890"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:39:22.100" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-48.png"&gt;&lt;img src="selenium-screenshot-48.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:39:21.890" endtime="20201108 17:39:22.100"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:39:18.789" endtime="20201108 17:39:22.101"></status>
+</kw>
+<kw name="Delete Branch And Logout" library="repository_steps" type="teardown">
+<arguments>
+<arg>${new_branch}</arg>
+</arguments>
+<kw name="Search Branch To Delete" library="repository_steps">
+<arguments>
+<arg>${branch}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${lnk_branches}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:22.108" endtime="20201108 17:39:22.128"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${lnk_branches}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:22.128" level="INFO">Clicking element 'xpath://span[contains(@class,'text-gray-light')][contains(text(),'branches')]'.</msg>
+<status status="PASS" starttime="20201108 17:39:22.128" endtime="20201108 17:39:22.465"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ipt_search_branches}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:22.465" endtime="20201108 17:39:22.705"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_search_branches}</arg>
+<arg>${branch}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:22.706" level="INFO">Typing text 'newbranch' into text field 'xpath://input[@name='query']'.</msg>
+<status status="PASS" starttime="20201108 17:39:22.706" endtime="20201108 17:39:22.777"></status>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>${ipt_search_branches}</arg>
+<arg>RETURN</arg>
+</arguments>
+<msg timestamp="20201108 17:39:22.778" level="INFO">Sending key(s) ('RETURN',) to xpath://input[@name='query'] element.</msg>
+<msg timestamp="20201108 17:39:23.067" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20201108 17:39:23.068" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20201108 17:39:22.777" endtime="20201108 17:39:23.091"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${txt_search_rst}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:23.091" endtime="20201108 17:39:23.402"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${rst_search}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:23.403" endtime="20201108 17:39:23.441"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:39:23.606" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-49.png"&gt;&lt;img src="selenium-screenshot-49.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:39:23.441" endtime="20201108 17:39:23.606"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:39:22.102" endtime="20201108 17:39:23.607"></status>
+</kw>
+<kw name="Delete Branch" library="repository_steps">
+<arguments>
+<arg>${branch}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${btn_del_branch}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:23.609" endtime="20201108 17:39:23.619"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_del_branch}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:23.620" level="INFO">Clicking button 'xpath://button[@title='Delete this branch']'.</msg>
+<status status="PASS" starttime="20201108 17:39:23.620" endtime="20201108 17:39:23.884"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${msg_branch_del}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:23.884" endtime="20201108 17:39:24.604"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:39:24.766" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-50.png"&gt;&lt;img src="selenium-screenshot-50.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:39:24.605" endtime="20201108 17:39:24.766"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:39:23.607" endtime="20201108 17:39:24.767"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:39:24.884" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-51.png"&gt;&lt;img src="selenium-screenshot-51.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:39:24.767" endtime="20201108 17:39:24.884"></status>
+</kw>
+<kw name="Logout" library="support">
+<kw name="Open Profile Menu" library="support">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${dpd_profile_menu}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:24.885" level="INFO">Clicking element 'xpath://summary[@class='Header-link'][@aria-label='View profile and more']'.</msg>
+<status status="PASS" starttime="20201108 17:39:24.885" endtime="20201108 17:39:25.142"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${opt_user_logged}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:25.142" endtime="20201108 17:39:25.178"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:39:25.304" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-52.png"&gt;&lt;img src="selenium-screenshot-52.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:39:25.178" endtime="20201108 17:39:25.304"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:39:24.884" endtime="20201108 17:39:25.304"></status>
+</kw>
+<kw name="Sign Out" library="support">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${opt_logout}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:25.306" level="INFO">Clicking button 'Sign out'.</msg>
+<status status="PASS" starttime="20201108 17:39:25.306" endtime="20201108 17:39:26.154"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${txt_sign_up}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:26.154" endtime="20201108 17:39:26.266"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:39:26.434" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-53.png"&gt;&lt;img src="selenium-screenshot-53.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:39:26.266" endtime="20201108 17:39:26.434"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:39:25.304" endtime="20201108 17:39:26.434"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:39:24.884" endtime="20201108 17:39:26.434"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:39:22.101" endtime="20201108 17:39:26.435"></status>
+</kw>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="PASS" starttime="20201108 17:39:15.478" endtime="20201108 17:39:26.435" critical="yes"></status>
+</test>
+<test id="s1-s3-t5" name="Delete branch from repository">
+<kw name="Login As User" library="login_steps" type="setup">
+<kw name="Navigate To Login Page" library="login_steps">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${lnk_login}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:26.437" level="INFO">Clicking link '/login'.</msg>
+<status status="PASS" starttime="20201108 17:39:26.437" endtime="20201108 17:39:26.894"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${hdr_login}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:26.894" endtime="20201108 17:39:26.914"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:39:27.063" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-54.png"&gt;&lt;img src="selenium-screenshot-54.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:39:26.915" endtime="20201108 17:39:27.063"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:39:26.437" endtime="20201108 17:39:27.063"></status>
+</kw>
+<kw name="Submit Credentials" library="login_steps">
+<arguments>
+<arg>${valid_user}</arg>
+<arg>${valid_pass}</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${hdr_login}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:27.064" endtime="20201108 17:39:27.082"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_login}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:27.083" level="INFO">Typing text 'go-contact' into text field 'id:login_field'.</msg>
+<status status="PASS" starttime="20201108 17:39:27.083" endtime="20201108 17:39:27.130"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_pass}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:27.131" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg timestamp="20201108 17:39:27.151" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20201108 17:39:27.178" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20201108 17:39:27.131" endtime="20201108 17:39:27.178"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_sign_in}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:27.179" level="INFO">Clicking button 'Sign in'.</msg>
+<status status="PASS" starttime="20201108 17:39:27.178" endtime="20201108 17:39:28.384"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:39:28.563" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-55.png"&gt;&lt;img src="selenium-screenshot-55.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:39:28.384" endtime="20201108 17:39:28.564"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:39:27.063" endtime="20201108 17:39:28.564"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:39:26.436" endtime="20201108 17:39:28.565"></status>
+</kw>
+<kw name="Open Repository" library="repository_steps">
+<arguments>
+<arg>${repo_to_branch}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${sbr_repos_container}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:28.576" endtime="20201108 17:39:28.608"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${sbr_repo_link %'${repo_owner}/${repo}'}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:28.610" level="INFO">Clicking link 'xpath://div[contains(@class,'dashboard-sidebar')]//a[@href="/go-contact/repotobranch"]'.</msg>
+<status status="PASS" starttime="20201108 17:39:28.609" endtime="20201108 17:39:29.553"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${hdr_repo_name %'${repo}'}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:29.553" endtime="20201108 17:39:29.575"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:39:29.750" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-56.png"&gt;&lt;img src="selenium-screenshot-56.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:39:29.576" endtime="20201108 17:39:29.751"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:39:28.566" endtime="20201108 17:39:29.751"></status>
+</kw>
+<kw name="Search Branch To Delete" library="repository_steps">
+<arguments>
+<arg>${old_branch}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${lnk_branches}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:29.751" endtime="20201108 17:39:29.775"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${lnk_branches}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:29.775" level="INFO">Clicking element 'xpath://span[contains(@class,'text-gray-light')][contains(text(),'branches')]'.</msg>
+<status status="PASS" starttime="20201108 17:39:29.775" endtime="20201108 17:39:30.067"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ipt_search_branches}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:30.067" endtime="20201108 17:39:30.287"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ipt_search_branches}</arg>
+<arg>${branch}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:30.287" level="INFO">Typing text 'oldbranch' into text field 'xpath://input[@name='query']'.</msg>
+<status status="PASS" starttime="20201108 17:39:30.287" endtime="20201108 17:39:30.348"></status>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>${ipt_search_branches}</arg>
+<arg>RETURN</arg>
+</arguments>
+<msg timestamp="20201108 17:39:30.353" level="INFO">Sending key(s) ('RETURN',) to xpath://input[@name='query'] element.</msg>
+<msg timestamp="20201108 17:39:30.653" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20201108 17:39:30.653" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20201108 17:39:30.348" endtime="20201108 17:39:30.677"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${txt_search_rst}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:30.677" endtime="20201108 17:39:30.926"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${rst_search}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:30.927" endtime="20201108 17:39:30.962"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:39:31.131" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-57.png"&gt;&lt;img src="selenium-screenshot-57.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:39:30.963" endtime="20201108 17:39:31.131"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:39:29.751" endtime="20201108 17:39:31.131"></status>
+</kw>
+<kw name="Delete Branch" library="repository_steps">
+<arguments>
+<arg>${old_branch}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${btn_del_branch}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:31.135" endtime="20201108 17:39:31.147"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_del_branch}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:31.147" level="INFO">Clicking button 'xpath://button[@title='Delete this branch']'.</msg>
+<status status="PASS" starttime="20201108 17:39:31.147" endtime="20201108 17:39:31.405"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${msg_branch_del}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:31.405" endtime="20201108 17:39:31.922"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:39:32.082" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-58.png"&gt;&lt;img src="selenium-screenshot-58.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:39:31.922" endtime="20201108 17:39:32.082"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:39:31.132" endtime="20201108 17:39:32.083"></status>
+</kw>
+<kw name="Restore Branch" library="repository_steps" type="teardown">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${btn_restore_branch}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:32.085" endtime="20201108 17:39:32.126"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_restore_branch}</arg>
+</arguments>
+<msg timestamp="20201108 17:39:32.127" level="INFO">Clicking button 'xpath://form//button[@name='return_to'][text()='Restore']'.</msg>
+<status status="PASS" starttime="20201108 17:39:32.126" endtime="20201108 17:39:32.373"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${btn_del_branch}</arg>
+</arguments>
+<status status="PASS" starttime="20201108 17:39:32.374" endtime="20201108 17:39:33.119"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201108 17:39:33.278" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-59.png"&gt;&lt;img src="selenium-screenshot-59.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201108 17:39:33.119" endtime="20201108 17:39:33.278"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:39:32.084" endtime="20201108 17:39:33.279"></status>
+</kw>
+<tags>
+<tag>Regression</tag>
+</tags>
+<status status="PASS" starttime="20201108 17:39:26.436" endtime="20201108 17:39:33.279" critical="yes"></status>
+</test>
+<kw name="End Test" library="support" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201108 17:39:33.283" endtime="20201108 17:39:34.150"></status>
+</kw>
+<status status="PASS" starttime="20201108 17:39:33.283" endtime="20201108 17:39:34.150"></status>
+</kw>
+<doc>This file contains the test cases related to repository management</doc>
+<status status="PASS" starttime="20201108 17:38:15.733" endtime="20201108 17:39:34.150"></status>
+</suite>
+<status status="PASS" starttime="20201108 17:37:51.383" endtime="20201108 17:39:34.160"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="10" fail="0">Critical Tests</stat>
+<stat pass="10" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="0">Regression</stat>
+<stat pass="7" fail="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="10" fail="0" id="s1" name="Tests">Tests</stat>
+<stat pass="4" fail="0" id="s1-s1" name="Failed Login">Tests.Failed Login</stat>
+<stat pass="1" fail="0" id="s1-s2" name="Login">Tests.Login</stat>
+<stat pass="5" fail="0" id="s1-s3" name="Repository">Tests.Repository</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

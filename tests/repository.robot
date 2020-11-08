@@ -10,7 +10,7 @@ Suite Teardown   End Test
 
 *** Test Cases ***
 Create a basic private repository
-    [Tags]  Test
+    [Tags]  Smoke
     [Setup]  Login As User
     Select Create New Repository
     Fill Repository Information    ${repo_name}    ${repo_desc}
@@ -36,7 +36,7 @@ Import a public repository
     [Teardown]  Delete Repository  ${imported_repo_name}
 
 Create a branch from master
-    [Tags]  Regression
+    [Tags]  Smoke
     [Setup]  Login As User
     Open Repository    ${repo_to_branch}
     Create Branch From Master    ${new_branch}
@@ -49,9 +49,3 @@ Delete branch from repository
     Search Branch To Delete     ${old_branch}
     Delete Branch    ${old_branch}
     [Teardown]  Restore Branch
-
-#Add a new file to an existing repository
-#    No Operation
-
-#Make a commit in a repository
-#    No Operation
